@@ -1,0 +1,1 @@
+{"description":"One commit message for a bug fix that made everything worse — make.fun bounty entry","license":"MIT","main":"main.ts","name":"worst-fix-ever-funniest-commit-message","scripts":{"start":"node main.ts"},"type":"module","version":"1.0.0"}
