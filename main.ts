@@ -82,11 +82,21 @@ function validate(line: string): void {
   }
 }
 
-function main(): void {
+/**
+ * Validate the composed line and return it. (Finisher revision: the
+ * validate-then-write steps were inline in main(); pulling the validation
+ * into its own function keeps the entry construction in one auditable spot.)
+ */
+function buildEntryLine(): string {
   validate(LINE);
+  return LINE;
+}
+
+function main(): void {
+  const line = buildEntryLine();
   const outPath = resolveOutputPath();
   mkdirSync(join(outPath, ".."), { recursive: true });
-  writeFileSync(outPath, LINE, "utf8");
+  writeFileSync(outPath, line, "utf8");
 }
 
 main();
